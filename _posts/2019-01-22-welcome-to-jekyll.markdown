@@ -4,7 +4,7 @@ title:  "hello jekyll!"
 date:   2019-01-23 15:14:54
 categories: jekyll
 tags: jekyll
-excerpt: jekyll Default page。
+excerpt: hello jekyll!
 mathjax: true
 ---
 
