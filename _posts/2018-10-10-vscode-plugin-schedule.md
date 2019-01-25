@@ -11,7 +11,7 @@ author: HyG
 
 ## 起因
 
-<script type="text/javascript" src="/js/src/viz_v1.js"></script>
+<iframe src="https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
 不知道大家是怎样安排自己的日常计划的，我习惯是建立一个仓库，按照年/周记录在 markdown 里，平时这个仓库也写点简单的 demo，目录类似如下：
 
 ``` bash
