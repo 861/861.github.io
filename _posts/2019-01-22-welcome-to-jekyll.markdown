@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "hello jekyll!"
-date:   2019-01-23 15:14:54
+date:   2019-01-22 15:14:54
 categories: jekyll
 tags: jekyll
 excerpt: hello jekyll!
