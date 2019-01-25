@@ -17,7 +17,7 @@ type: page
 
 * [Communicating Data with Tableau](https://tanthiamhuat.files.wordpress.com/2015/07/communicating-data-with-tableau.pdf)
 
-    Communicating Data with Tableau PDF。
+    Communicating Data with Tableau PDF.
 
 
 

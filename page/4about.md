@@ -11,15 +11,15 @@ type: page
 
 ## About me
 
-<iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+<!-- <iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
 
 NIU-GEOG
 
 ## 联系我
 
-* GitHub：[Gaohaoyang](https://github.com/Gaohaoyang)
-* email：gaohaoyang126@126.com
-* [Weibo](http://weibo.com/3115521wh)
+* GitHub：[Gaohaoyang](https://github.com/861)
+<!-- * email：gaohaoyang126@126.com
+* [Weibo](http://weibo.com/3115521wh) -->
 
 
 ## 关于本站
