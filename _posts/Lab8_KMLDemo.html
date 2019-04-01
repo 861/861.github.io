@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>KML Click Capture Sample</title>
+    <style>
+      html, body {
+        height: 370px;
+        padding: 0;
+        margin: 0;
+        }
+      #map {
+       height: 700px;
+       width: 100%;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+       }
+      #capture {
+       height: 360px;
+       width: 480px;
+       overflow: hidden;
+       float: bottom;
+       background-color: #ECECFB;
+       border: thin solid #333;
+       border-left: none;
+       }
+       #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+        height: 150px;
+        width: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <div id="legend"><h3>Legend</h3></div>
+    <!-- <div id="capture"></div> -->
+    <script>
+      var map;
+      var src = 'https://raw.githubusercontent.com/861/861.github.io/master/_posts/Lab8_Community_Area.kmz';
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(41.881832, -87.623177),
+          zoom: 1,
+          mapTypeId: 'terrain'
+        });
+      
+
+        var kmlLayer = new google.maps.KmlLayer(src, {
+          suppressInfoWindows: false,
+          preserveViewport: false,
+          map: map
+        });
+        // kmlLayer.addListener('click', function(event) {
+        //   var content = event.featureData.infoWindowHtml;
+        // //   var testimonial = document.getElementById('capture');
+        // //   testimonial.innerHTML = content;
+
+        //   showInContentWindow(content);
+        // });
+
+
+        var infowindow = new google.maps.InfoWindow({
+            pixelOffset: new google.maps.Size(300, 0),
+        });
+
+        kmlLayer.addListener( "click", showInContentWindow);
+
+        function showInContentWindow(kmlEvent) {
+            var content = "<div>" + kmlEvent.featureData.description + "</div>";
+            infowindow.setOptions({
+                pixelOffset:kmlEvent.pixelOffset,
+                content: content
+            });
+            infowindow.open(map);
+        }
+
+
+
+        
+
+        var iconBase = 'https://raw.githubusercontent.com/861/861.github.io/master/_posts/';
+        var icons = {
+          Legend9134: {
+            name: '9-134',
+            icon: iconBase + '9-134.png'
+          },
+          Legend135304: {
+            name: '135-304',
+            icon: iconBase + '135-304.png'
+          },
+          Legend305562: {
+            name: '305-562',
+            icon: iconBase + '305-562.png'
+          },
+          Legend5631119: {
+            name: '563-1119',
+            icon: iconBase + '563-1119.png'
+          },
+          Legend11201980: {
+            name: '1120-1980',
+            icon: iconBase + '1120-1980.png'
+          }
+        };
+
+        // var features = [
+        //   {
+        //     position: new google.maps.LatLng(-33.91721, 151.22630),
+        //     type: 'Legend11201980'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91539, 151.22820),
+        //     type: 'Legend11201980'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91747, 151.22912),
+        //     type: 'Legend11201980'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91666, 151.23468),
+        //     type: 'Legend11201980'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.916988, 151.233640),
+        //     type: 'Legend11201980'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
+        //     type: 'Legend135304'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
+        //     type: 'Legend135304'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
+        //     type: 'Legend135304'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
+        //     type: 'Legend135304'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
+        //     type: 'Legend5631119'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
+        //     type: 'Legend5631119'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
+        //     type: 'Legend5631119'
+        //   }, {
+        //     position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
+        //     type: 'Legend5631119'
+        //   }
+        // ];
+
+        // // Create markers.
+        // features.forEach(function(feature) {
+        //   var marker = new google.maps.Marker({
+        //     position: feature.position,
+        //     icon: icons[feature.type].icon,
+        //     map: map
+        //   });
+        // });
+
+        var legend = document.getElementById('legend');
+        for (var key in icons) {
+          var type = icons[key];
+          var name = type.name;
+          var icon = type.icon;
+          var div = document.createElement('div');
+          div.innerHTML = '<img src="' + icon + '" width="40" height="20"> ' + name;
+          legend.appendChild(div);
+        }
+
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi-xKFQ-Ya60i9h1le0s3PLoI8deOg7TU&callback=initMap">
+    </script>
+  </body>
+</html>
