@@ -12,12 +12,21 @@ author: SYX
 
 
 
-
-
-
-
-
 <html>
+<body>
+
+<h3 align="center"> 
+<p><a href="https://861.github.io/2019/04/21/FinalProject/">Poster</a></p>
+<p><a href="http://dev.60by25network.illinoisdata.com/Assets/Scripts/Geographies/data/Maptest/CookCounty_Tracts_2SFCA.HTML">2SFCA Map</a></p>
+<p><a href="http://dev.60by25network.illinoisdata.com/Assets/Scripts/Geographies/data/Maptest/CookCounty_Tracts_RAAM_Total2.HTML">RAAM Map</a></p>
+</h3>
+</body>
+</html>
+
+
+
+
+<!-- <html>
 <head>
         <meta name="DC.date" content="2019-04-09 11:44:19 上午" />
         <meta name="DC.language" content="ENU" />
@@ -43,4 +52,4 @@ author: SYX
 <iframe width="800" height="400" src="http://dev.60by25network.illinoisdata.com/Assets/Scripts/Geographies/data/Maptest/CookCounty_Tracts_RAAM_Total2.HTML"></iframe>
 </div>
 </body>
-</html>
+</html> -->
